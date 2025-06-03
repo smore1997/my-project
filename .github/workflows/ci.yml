@@ -23,10 +23,10 @@ jobs:
         dotnet-version: '6.0.x'  # Specify the version of .NET you are using
 
     - name: Restore dependencies
-      run: dotnet restore ./MyApi.sln
+      run: dotnet restore 
 
     - name: Build
-      run: dotnet build ./MyApi.sln --configuration Release --no-restore
+      run: dotnet build --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test ./MyApi.sln --no-build --verbosity normal
+      run: dotnet test --no-build --verbosity normal
