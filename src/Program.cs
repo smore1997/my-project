@@ -19,7 +19,7 @@ public class Program
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-builder.Services.AddControllers(); // Example: Add if you are using controllers
+builder.Services.AddControllers();
 
 var app = builder.Build();
 
@@ -31,8 +31,8 @@ if (app.Environment.IsDevelopment())
 
 app.UseRouting();
 
-app.MapGet("/", () => "Hello World!"); // Example endpoint
+app.MapGet("/", () => "Hello World!");
 
-app.MapControllers(); // Example: Map if you are using controllers
+app.MapControllers();
 
 app.Run();
