@@ -20,13 +20,13 @@ jobs:
     - name: Setup .NET
       uses: actions/setup-dotnet@v1
       with:
-        dotnet-version: '6.0.x'
+        dotnet-version: '6.0.x'  # Specify the version of .NET you are using
 
     - name: Restore dependencies
-      run: dotnet restore src/MyApiProject.csproj
+      run: dotnet restore ./MyApi.sln
 
     - name: Build
-      run: dotnet build src/MyApiProject.csproj --configuration Release --no-restore
+      run: dotnet build ./MyApi.sln --configuration Release --no-restore
 
     - name: Test
-      run: dotnet test src/MyApiProject.csproj --no-build --verbosity normal
+      run: dotnet test ./MyApi.sln --no-build --verbosity normal

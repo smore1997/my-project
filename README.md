@@ -1,48 +1,57 @@
-# My API MSBuild Project
+# My API Project
 
-This is a basic API project built using MSBuild. It serves as a starting point for creating RESTful services.
+This is a basic API project built using .NET. It provides weather data through a simple HTTP interface.
 
 ## Project Structure
 
 ```
-my-api-msbuild-project
+my-api-project
 ├── src
-│   ├── MyApiProject.csproj  # MSBuild project file
-│   └── Program.cs           # Entry point of the API application
+│   ├── Controllers
+│   │   └── WeatherController.cs
+│   ├── Program.cs
+│   └── MyApi.csproj
 ├── .github
 │   └── workflows
-│       └── ci.yml           # GitHub Actions workflow for CI
-└── README.md                # Project documentation
+│       └── ci.yml
+├── MyApi.sln
+└── README.md
 ```
 
-## Getting Started
+## Setup Instructions
 
-To get started with this project, follow these steps:
-
-1. **Clone the repository:**
+1. Clone the repository:
    ```
-   git clone https://github.com/yourusername/my-api-msbuild-project.git
-   cd my-api-msbuild-project
+   git clone https://github.com/yourusername/my-api-project.git
    ```
 
-2. **Build the project:**
+2. Navigate to the project directory:
    ```
-   dotnet build src/MyApiProject.csproj
+   cd my-api-project
    ```
 
-3. **Run the application:**
+3. Restore the dependencies:
    ```
-   dotnet run --project src/MyApiProject.csproj
+   dotnet restore
+   ```
+
+4. Run the application:
+   ```
+   dotnet run --project src/MyApi.csproj
    ```
 
 ## Usage
 
-Once the application is running, you can access the API at `http://localhost:5000`. You can use tools like Postman or curl to interact with the API endpoints.
+Once the application is running, you can access the weather data by sending a GET request to the following endpoint:
+
+```
+GET /weather
+```
+
+## CI/CD
+
+This project includes a GitHub Actions workflow for continuous integration. The workflow is defined in the `.github/workflows/ci.yml` file and will automatically build and test the project on every push to the repository.
 
 ## Contributing
 
-Contributions are welcome! Please open an issue or submit a pull request for any improvements or features you'd like to add.
-
-## License
-
-This project is licensed under the MIT License. See the LICENSE file for more details.
+Feel free to submit issues or pull requests if you have suggestions or improvements for the project.
